@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FTPApp"
+             x:Class="FTPApp.MainPage"
+             BackgroundColor="SkyBlue">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" Spacing="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Fill">
+                <Entry x:Name="ipField" Placeholder="Server Ip Address" Completed="connectToServer" />
+                <Label x:Name="ipLabel" Text="Id:   " />
+            </StackLayout>
+            <Button Text="Get Files" Clicked="onGetFiles"/>
+            <Button Text="Send Files" Clicked="onSendFiles"/>
+            <Button Text="Disconnect" Clicked="onDisconnect"/>
+            <Button Text="Server List" Clicked="viewServerList"/>
+            <Button Text="Commands" Clicked="onCommands"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FTPApp.ServerList"
+             BackgroundColor="SkyBlue">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+            <ListView x:Name="serverView" ItemTapped="onTap" RowHeight="80">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                                <Label Text="{Binding name}" FontSize="Large" TextColor="Black"/>
+                                <Label Text="{Binding ip}" FontSize="Micro" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Entry x:Name="nameField" Placeholder="Server Name"/>
+            <Entry x:Name="ipField" Placeholder="Server Ip Address"/>
+            <Button Text="Add Server" Clicked="addServer"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

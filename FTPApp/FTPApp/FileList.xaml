@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FTPApp.FileList">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Fill" Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand">
+                <Label Text="Go to:" />
+                <Picker x:Name="jump" SelectedIndexChanged="newJump" WidthRequest="110"/>
+            </StackLayout>
+            <ListView x:Name="fileSystem" ItemSelected="onItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                                <Image Source="{Binding image}"/>
+                                <Label Text="{Binding fileName}" TextColor="Black" FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ProgressBar x:Name="progress" IsVisible="False" Progress="0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
